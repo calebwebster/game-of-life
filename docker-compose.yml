@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  dev-env:
+    image: csharp-nvim
+    container_name: csharp-nvim-1
+    platform: linux/amd64
+    ports:
+      - "5001:5001"
+    volumes:
+      # Mount the current project directory to /app
+      - .:/app
+      # Mount your Neovim configuration and local data directories
+      - ./.config:/root/.config
+      - ./.local:/root/.local
+    # Enables interactive TTY so you can attach and use Neovim
+    stdin_open: true 
+    tty: true
