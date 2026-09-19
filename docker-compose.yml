@@ -2,6 +2,7 @@ services:
   game-of-life:
     build:
       context: .
+      target: dev
     container_name: game-of-life-1
     platform: linux/amd64
     ports:
